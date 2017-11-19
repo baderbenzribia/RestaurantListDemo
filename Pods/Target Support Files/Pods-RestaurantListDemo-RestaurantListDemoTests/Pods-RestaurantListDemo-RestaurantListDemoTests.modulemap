@@ -1,0 +1,6 @@
+framework module Pods_RestaurantListDemo_RestaurantListDemoTests {
+  umbrella header "Pods-RestaurantListDemo-RestaurantListDemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
