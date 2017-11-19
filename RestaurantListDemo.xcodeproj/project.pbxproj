@@ -17,7 +17,6 @@
 		6EBFF5381FB709CD00974C73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBFF5361FB709CD00974C73 /* Main.storyboard */; };
 		6EBFF53A1FB709CD00974C73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EBFF5391FB709CD00974C73 /* Assets.xcassets */; };
 		6EBFF53D1FB709CD00974C73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EBFF53B1FB709CD00974C73 /* LaunchScreen.storyboard */; };
-		6EBFF5481FB709CD00974C73 /* RestaurantListDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBFF5471FB709CD00974C73 /* RestaurantListDemoTests.swift */; };
 		6EBFF5561FB70A1D00974C73 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBFF5521FB70A1D00974C73 /* Restaurant.swift */; };
 		6EBFF5571FB70A1D00974C73 /* RestaurantViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBFF5531FB70A1D00974C73 /* RestaurantViewCell.swift */; };
 		6EBFF5581FB70A1D00974C73 /* SortingValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBFF5541FB70A1D00974C73 /* SortingValues.swift */; };
@@ -58,7 +57,6 @@
 		6EBFF53C1FB709CD00974C73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EBFF53E1FB709CD00974C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EBFF5431FB709CD00974C73 /* RestaurantListDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantListDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6EBFF5471FB709CD00974C73 /* RestaurantListDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListDemoTests.swift; sourceTree = "<group>"; };
 		6EBFF5491FB709CD00974C73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6EBFF5521FB70A1D00974C73 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		6EBFF5531FB70A1D00974C73 /* RestaurantViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantViewCell.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 		6EBFF5461FB709CD00974C73 /* RestaurantListDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				6EBFF5471FB709CD00974C73 /* RestaurantListDemoTests.swift */,
 				6E64F4FB1FBFA32A00D51C56 /* PersistanceManagerTests.swift */,
 				6E64F4FF1FBFA90000D51C56 /* MenuItemTests.swift */,
 				6E64F4FD1FBFA8DE00D51C56 /* MenuItemsControllerTests.swift */,
@@ -452,7 +449,6 @@
 				6E64F4FE1FBFA8DE00D51C56 /* MenuItemsControllerTests.swift in Sources */,
 				6E64F5021FBFAD9600D51C56 /* RestaurantsTests.swift in Sources */,
 				6E64F5001FBFA90000D51C56 /* MenuItemTests.swift in Sources */,
-				6EBFF5481FB709CD00974C73 /* RestaurantListDemoTests.swift in Sources */,
 				6E64F4FC1FBFA32A00D51C56 /* PersistanceManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

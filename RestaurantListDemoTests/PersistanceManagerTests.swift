@@ -17,11 +17,9 @@ class PersistanceManagerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
     }
     
     override func tearDown() {
-    
         super.tearDown()
     }
     
@@ -58,6 +56,5 @@ class PersistanceManagerTests: XCTestCase {
             XCTAssertEqual(savedRestaurants[i].sortingValues.deliveryCosts,restaurants[i].sortingValues.deliveryCosts, "RestaurantDeliveryCost is not the same after saving")
             XCTAssertEqual(savedRestaurants[i].sortingValues.minCost,restaurants[i].sortingValues.minCost, "RestaurantMinCost is not the same after saving")
         }
-    
     }
 }

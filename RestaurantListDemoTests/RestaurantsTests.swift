@@ -14,14 +14,11 @@ class RestaurantsTests: XCTestCase {
     
     let restaurantsController = RestaurantsContoller()
     
-    
     override func setUp() {
         super.setUp()
-    
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
@@ -30,7 +27,7 @@ class RestaurantsTests: XCTestCase {
         let restaurant = restaurantsController.restaurants[4]
         restaurantsController.setFavoriteAt(index: 4)
         let restaurantFav = restaurantsController.restaurants[4]
-        XCTAssertNotEqual(restaurant.isFavorite, restaurantFav.isFavorite)
+        XCTAssertNotEqual(restaurant.isFavorite, restaurantFav.isFavorite, "Setting Favorite / NotFavorite by index failed")
     }
     
     func testSetRestaurantAsFavorite()
@@ -38,7 +35,7 @@ class RestaurantsTests: XCTestCase {
         let restaurant = restaurantsController.restaurants[6]
         restaurantsController.setFavorite(restaurant: restaurant)
         let restaurantFav = restaurantsController.restaurants[6]
-        XCTAssertNotEqual(restaurant.isFavorite, restaurantFav.isFavorite)
+        XCTAssertNotEqual(restaurant.isFavorite, restaurantFav.isFavorite, "Setting Favorite / NotFavorite failed")
     }
     
     func testSort()
@@ -47,7 +44,10 @@ class RestaurantsTests: XCTestCase {
         for i in 0..<(sortedRestaurants.count-1) {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite
             {
-                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].status, sortedRestaurants[i+1].status)
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].status, sortedRestaurants[i+1].status, "sorting array by state failed")
+            }
+            else {
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].isFavorite, sortedRestaurants[i+1].isFavorite, "sorting array by favorite failed")
             }
         }
         
@@ -60,10 +60,9 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.bestMatch, sortedRestaurants[i+1].sortingValues.bestMatch)
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.bestMatch, sortedRestaurants[i+1].sortingValues.bestMatch, "sorting array by bestMatch failed")
             }
         }
-        
     }
     
     func testSortByNewest()
@@ -73,7 +72,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.newest, sortedRestaurants[i+1].sortingValues.newest)
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.newest, sortedRestaurants[i+1].sortingValues.newest, "sorting array by newest failed")
             }
         }
     }
@@ -85,7 +84,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.ratingAverage, sortedRestaurants[i+1].sortingValues.ratingAverage)
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.ratingAverage, sortedRestaurants[i+1].sortingValues.ratingAverage, "sorting array by ratingAverage failed")
             }
         }
     }
@@ -97,7 +96,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.distance, sortedRestaurants[i+1].sortingValues.distance)
+                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.distance, sortedRestaurants[i+1].sortingValues.distance, "sorting array by distance failed")
             }
         }
     }
@@ -109,7 +108,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.popularity, sortedRestaurants[i+1].sortingValues.popularity)
+                XCTAssertGreaterThanOrEqual(sortedRestaurants[i].sortingValues.popularity, sortedRestaurants[i+1].sortingValues.popularity, "sorting array by popularity failed")
             }
         }
     }
@@ -121,7 +120,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.averageProductPrice, sortedRestaurants[i+1].sortingValues.averageProductPrice)
+                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.averageProductPrice, sortedRestaurants[i+1].sortingValues.averageProductPrice, "sorting array by averageProductPrice failed")
             }
         }
     }
@@ -133,7 +132,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.deliveryCosts, sortedRestaurants[i+1].sortingValues.deliveryCosts)
+                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.deliveryCosts, sortedRestaurants[i+1].sortingValues.deliveryCosts, "sorting array by deliveryCosts failed")
             }
         }
     }
@@ -145,7 +144,7 @@ class RestaurantsTests: XCTestCase {
             if sortedRestaurants[i].isFavorite == sortedRestaurants[i+1].isFavorite &&
                 sortedRestaurants[i].status == sortedRestaurants[i+1].status
             {
-                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.minCost, sortedRestaurants[i+1].sortingValues.minCost)
+                XCTAssertLessThanOrEqual(sortedRestaurants[i].sortingValues.minCost, sortedRestaurants[i+1].sortingValues.minCost, "sorting array by minCost failed")
             }
         }
     }
@@ -158,7 +157,7 @@ class RestaurantsTests: XCTestCase {
         for restaurant in filteredRestaurants {
             
             let restaurantName = restaurant.name.lowercased()
-            XCTAssertTrue(restaurantName.contains(filterString.lowercased()))
+            XCTAssertTrue(restaurantName.contains(filterString.lowercased()), "Filtered array doesn't contain the given string")
             
         }
     }
